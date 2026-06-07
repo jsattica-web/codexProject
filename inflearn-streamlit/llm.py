@@ -28,7 +28,7 @@ def get_llm():
 def get_retriever():
     embedding = UpstageEmbeddings(model='solar-embedding-1-large')
 
-    index_name = "tax-index-4096"
+    index_name = "pansion-index-4096"
     
     database = PineconeVectorStore.from_existing_index(index_name, embedding)
 
@@ -38,7 +38,7 @@ def get_retriever():
 
 
 def get_dictionary_chain():
-    dictionary = ["사람을 나타내는 표현 -> 거주자"]
+    dictionary = ["직장인가입자 -> 사업장가입자"]
 
     llm = get_llm()
 
@@ -101,10 +101,10 @@ def get_rag_chain():
     history_aware_retriever = get_history_aware_retriever()
 
     system_prompt = (
-        "당신은 소득세법 전문가입니다. 사용자의 소득세법에 관한 질문에 답변해주세요"
+        "당신은 국민연금법 전문가입니다. 사용자의 국민연금법에 관한 질문에 답변해주세요"
         "아래 제공된 문서를 활용해서 답변해주시고"
         "답변을 알 수 없다면 모르다고 답변해주세요"
-        "답변을 제공할 때는 소득세법 (XX조)에 따르면 이라고 시작하면서 답변해주시고"
+        "답변을 제공할 때는 국민연금법 (XX조)에 따르면 이라고 시작하면서 답변해주시고"
         "2-3 문장정도의 짧은 내용의 답변을 원합니다"
         "\n\n"
         "{context}"

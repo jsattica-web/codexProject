@@ -3,10 +3,10 @@ import streamlit as st
 from dotenv import load_dotenv
 from llm import get_ai_response
 
-st.set_page_config(page_title="소득세 챗봇", page_icon='🤖')
+st.set_page_config(page_title="국민연금법 챗봇", page_icon='🤖')
 
-st.title("🤖 소득세 챗봇")
-st.caption("소득세에 관련된 모든것을 답해드립니다!")
+st.title("🤖 국민연금법 챗봇")
+st.caption("국민연금법 관련된 모든것을 답해드립니다!")
 
 load_dotenv()
  
@@ -24,7 +24,7 @@ for message in st.session_state.message_list:
 
 
 # 입력창
-if user_question := st.chat_input(placeholder="소득세에 관련된 궁금한 내용들을 말씀해주세요!"):
+if user_question := st.chat_input(placeholder="국민연금법 관련된 궁금한 내용들을 말씀해주세요!"):
     # 사용자 최근에 입력하는 메세지 표시
     with st.chat_message("user"):
         st.write(user_question)
