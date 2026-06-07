@@ -1,0 +1,7 @@
+﻿streamlit==1.58.0
+python-dotenv==1.2.2
+langchain-core==1.4.0
+langchain-classic==1.0.7
+langchain-community==0.4.2
+langchain-upstage==0.7.7
+langchain-pinecone==0.2.13
